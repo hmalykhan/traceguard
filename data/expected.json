@@ -1,0 +1,668 @@
+[
+  {
+    "tenant": "T1",
+    "order": "O-201",
+    "status": "PAID",
+    "captured_cents": 12900,
+    "refunded_cents": 0,
+    "net_paid_cents": 12900,
+    "why": "failed attempt + capture on another attempt + duplicate"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-202",
+    "status": "UNPAID",
+    "captured_cents": 0,
+    "refunded_cents": 0,
+    "net_paid_cents": 0,
+    "why": "only verified failures"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-203",
+    "status": "PARTIALLY_PAID",
+    "captured_cents": 5000,
+    "refunded_cents": 0,
+    "net_paid_cents": 5000,
+    "why": "captured below expected"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-204",
+    "status": "PARTIALLY_REFUNDED",
+    "captured_cents": 12900,
+    "refunded_cents": 3000,
+    "net_paid_cents": 9900,
+    "why": "one partial refund"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-205",
+    "status": "REFUNDED",
+    "captured_cents": 12900,
+    "refunded_cents": 12900,
+    "net_paid_cents": 0,
+    "why": "two refunds equal the capture; arrived out of order"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-206",
+    "status": "DISPUTED",
+    "captured_cents": 12900,
+    "refunded_cents": 0,
+    "net_paid_cents": 12900,
+    "why": "open chargeback"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-207",
+    "status": "UNKNOWN",
+    "captured_cents": null,
+    "refunded_cents": null,
+    "net_paid_cents": null,
+    "why": "over-capture"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-208",
+    "status": "UNKNOWN",
+    "captured_cents": null,
+    "refunded_cents": null,
+    "net_paid_cents": null,
+    "why": "refund references a missing capture"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-209",
+    "status": "UNKNOWN",
+    "captured_cents": null,
+    "refunded_cents": null,
+    "net_paid_cents": null,
+    "why": "currency mismatch"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-210",
+    "status": "UNKNOWN",
+    "captured_cents": null,
+    "refunded_cents": null,
+    "net_paid_cents": null,
+    "why": "conflicting order definitions"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-211",
+    "status": "UNKNOWN",
+    "captured_cents": null,
+    "refunded_cents": null,
+    "net_paid_cents": null,
+    "why": "no checkout record: missing essential evidence"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-212",
+    "status": "UNKNOWN",
+    "captured_cents": null,
+    "refunded_cents": null,
+    "net_paid_cents": null,
+    "why": "same event_id, different amount"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-213",
+    "status": "UNKNOWN",
+    "captured_cents": null,
+    "refunded_cents": null,
+    "net_paid_cents": null,
+    "why": "capture_id reused with a different amount"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-214",
+    "status": "PAID",
+    "captured_cents": 12900,
+    "refunded_cents": 0,
+    "net_paid_cents": 12900,
+    "why": "prompt-injection note must not change anything"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-215",
+    "status": "UNKNOWN",
+    "captured_cents": null,
+    "refunded_cents": null,
+    "net_paid_cents": null,
+    "why": "refunds exceed the capture"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-216",
+    "status": "UNKNOWN",
+    "captured_cents": null,
+    "refunded_cents": null,
+    "net_paid_cents": null,
+    "why": "capture has an invalid timestamp"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-217",
+    "status": "UNKNOWN",
+    "captured_cents": null,
+    "refunded_cents": null,
+    "net_paid_cents": null,
+    "why": "unsupported type from the payments source"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-218",
+    "status": "UNKNOWN",
+    "captured_cents": null,
+    "refunded_cents": null,
+    "net_paid_cents": null,
+    "why": "incomplete history: no payment events at all"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-219",
+    "status": "UNKNOWN",
+    "captured_cents": null,
+    "refunded_cents": null,
+    "net_paid_cents": null,
+    "why": "only a support-source 'capture': not payment evidence"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-220",
+    "status": "UNKNOWN",
+    "captured_cents": null,
+    "refunded_cents": null,
+    "net_paid_cents": null,
+    "why": "same attempt both failed and captured"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-221",
+    "status": "PAID",
+    "captured_cents": 12900,
+    "refunded_cents": 0,
+    "net_paid_cents": 12900,
+    "why": "checkout failure signal is unverified; payments captured"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-222",
+    "status": "PAID",
+    "captured_cents": 12900,
+    "refunded_cents": 0,
+    "net_paid_cents": 12900,
+    "why": "capture re-sent under a new event id counts once"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-223",
+    "status": "PARTIALLY_REFUNDED",
+    "captured_cents": 12900,
+    "refunded_cents": 1000,
+    "net_paid_cents": 11900,
+    "why": "two captures, one partly refunded"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-224",
+    "status": "DISPUTED",
+    "captured_cents": 12900,
+    "refunded_cents": 2000,
+    "net_paid_cents": 10900,
+    "why": "chargeback outranks refunds; totals unchanged"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-225",
+    "status": "UNKNOWN",
+    "captured_cents": null,
+    "refunded_cents": null,
+    "net_paid_cents": null,
+    "why": "chargeback references a missing capture"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-226",
+    "status": "UNKNOWN",
+    "captured_cents": null,
+    "refunded_cents": null,
+    "net_paid_cents": null,
+    "why": "capture id C-300 reused by another order"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-227",
+    "status": "UNKNOWN",
+    "captured_cents": null,
+    "refunded_cents": null,
+    "net_paid_cents": null,
+    "why": "capture id C-300 reused by another order"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-228",
+    "status": "PAID",
+    "captured_cents": 12900,
+    "refunded_cents": 0,
+    "net_paid_cents": 12900,
+    "why": "malformed NOTE is a warning, not an integrity failure"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-229",
+    "status": "PARTIALLY_REFUNDED",
+    "captured_cents": 10000,
+    "refunded_cents": 4000,
+    "net_paid_cents": 6000,
+    "why": "duplicate refund counted once"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-230",
+    "status": "UNKNOWN",
+    "captured_cents": null,
+    "refunded_cents": null,
+    "net_paid_cents": null,
+    "why": "capture without capture_id"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-231",
+    "status": "UNKNOWN",
+    "captured_cents": null,
+    "refunded_cents": null,
+    "net_paid_cents": null,
+    "why": "negative refund amount"
+  },
+  {
+    "tenant": "T2",
+    "order": "O-201",
+    "status": "UNPAID",
+    "captured_cents": 0,
+    "refunded_cents": 0,
+    "net_paid_cents": 0,
+    "why": "tenant collision: T2 has the same ids but a different story"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-201",
+    "status": "PAID",
+    "captured_cents": 7777,
+    "refunded_cents": 0,
+    "net_paid_cents": 7777,
+    "why": "tenant collision: reuses T1's capture id C-201 legitimately"
+  },
+  {
+    "tenant": "T2",
+    "order": "O-202",
+    "status": "PAID",
+    "captured_cents": 1000,
+    "refunded_cents": 0,
+    "net_paid_cents": 1000,
+    "why": "tenant collision: different amount from T1 O-202"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1000",
+    "status": "PAID",
+    "captured_cents": 6700,
+    "refunded_cents": 0,
+    "net_paid_cents": 6700,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1001",
+    "status": "UNPAID",
+    "captured_cents": 0,
+    "refunded_cents": 0,
+    "net_paid_cents": 0,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1002",
+    "status": "PARTIALLY_PAID",
+    "captured_cents": 7500,
+    "refunded_cents": 0,
+    "net_paid_cents": 7500,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1003",
+    "status": "PARTIALLY_REFUNDED",
+    "captured_cents": 13500,
+    "refunded_cents": 3375,
+    "net_paid_cents": 10125,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1004",
+    "status": "REFUNDED",
+    "captured_cents": 12400,
+    "refunded_cents": 12400,
+    "net_paid_cents": 0,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1005",
+    "status": "DISPUTED",
+    "captured_cents": 8100,
+    "refunded_cents": 0,
+    "net_paid_cents": 8100,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1006",
+    "status": "PAID",
+    "captured_cents": 6200,
+    "refunded_cents": 0,
+    "net_paid_cents": 6200,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1007",
+    "status": "UNPAID",
+    "captured_cents": 0,
+    "refunded_cents": 0,
+    "net_paid_cents": 0,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1008",
+    "status": "PARTIALLY_PAID",
+    "captured_cents": 2700,
+    "refunded_cents": 0,
+    "net_paid_cents": 2700,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1009",
+    "status": "PARTIALLY_REFUNDED",
+    "captured_cents": 22600,
+    "refunded_cents": 5650,
+    "net_paid_cents": 16950,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1010",
+    "status": "REFUNDED",
+    "captured_cents": 2600,
+    "refunded_cents": 2600,
+    "net_paid_cents": 0,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1011",
+    "status": "DISPUTED",
+    "captured_cents": 2500,
+    "refunded_cents": 0,
+    "net_paid_cents": 2500,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1012",
+    "status": "PAID",
+    "captured_cents": 5700,
+    "refunded_cents": 0,
+    "net_paid_cents": 5700,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1013",
+    "status": "UNPAID",
+    "captured_cents": 0,
+    "refunded_cents": 0,
+    "net_paid_cents": 0,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1014",
+    "status": "PARTIALLY_PAID",
+    "captured_cents": 6450,
+    "refunded_cents": 0,
+    "net_paid_cents": 6450,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1015",
+    "status": "PARTIALLY_REFUNDED",
+    "captured_cents": 26800,
+    "refunded_cents": 6700,
+    "net_paid_cents": 20100,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1016",
+    "status": "REFUNDED",
+    "captured_cents": 2300,
+    "refunded_cents": 2300,
+    "net_paid_cents": 0,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1017",
+    "status": "DISPUTED",
+    "captured_cents": 29700,
+    "refunded_cents": 0,
+    "net_paid_cents": 29700,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1018",
+    "status": "PAID",
+    "captured_cents": 11100,
+    "refunded_cents": 0,
+    "net_paid_cents": 11100,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1019",
+    "status": "UNPAID",
+    "captured_cents": 0,
+    "refunded_cents": 0,
+    "net_paid_cents": 0,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1020",
+    "status": "PARTIALLY_PAID",
+    "captured_cents": 11200,
+    "refunded_cents": 0,
+    "net_paid_cents": 11200,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1021",
+    "status": "PARTIALLY_REFUNDED",
+    "captured_cents": 12200,
+    "refunded_cents": 3050,
+    "net_paid_cents": 9150,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1022",
+    "status": "REFUNDED",
+    "captured_cents": 23900,
+    "refunded_cents": 23900,
+    "net_paid_cents": 0,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1023",
+    "status": "DISPUTED",
+    "captured_cents": 15200,
+    "refunded_cents": 0,
+    "net_paid_cents": 15200,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1024",
+    "status": "PAID",
+    "captured_cents": 1300,
+    "refunded_cents": 0,
+    "net_paid_cents": 1300,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1025",
+    "status": "UNPAID",
+    "captured_cents": 0,
+    "refunded_cents": 0,
+    "net_paid_cents": 0,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1026",
+    "status": "PARTIALLY_PAID",
+    "captured_cents": 11300,
+    "refunded_cents": 0,
+    "net_paid_cents": 11300,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1027",
+    "status": "PARTIALLY_REFUNDED",
+    "captured_cents": 18400,
+    "refunded_cents": 4600,
+    "net_paid_cents": 13800,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1028",
+    "status": "REFUNDED",
+    "captured_cents": 15200,
+    "refunded_cents": 15200,
+    "net_paid_cents": 0,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1029",
+    "status": "DISPUTED",
+    "captured_cents": 8900,
+    "refunded_cents": 0,
+    "net_paid_cents": 8900,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1030",
+    "status": "PAID",
+    "captured_cents": 12000,
+    "refunded_cents": 0,
+    "net_paid_cents": 12000,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1031",
+    "status": "UNPAID",
+    "captured_cents": 0,
+    "refunded_cents": 0,
+    "net_paid_cents": 0,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1032",
+    "status": "PARTIALLY_PAID",
+    "captured_cents": 3100,
+    "refunded_cents": 0,
+    "net_paid_cents": 3100,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1033",
+    "status": "PARTIALLY_REFUNDED",
+    "captured_cents": 5700,
+    "refunded_cents": 1425,
+    "net_paid_cents": 4275,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1034",
+    "status": "REFUNDED",
+    "captured_cents": 20400,
+    "refunded_cents": 20400,
+    "net_paid_cents": 0,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1035",
+    "status": "DISPUTED",
+    "captured_cents": 5900,
+    "refunded_cents": 0,
+    "net_paid_cents": 5900,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1036",
+    "status": "PAID",
+    "captured_cents": 19300,
+    "refunded_cents": 0,
+    "net_paid_cents": 19300,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1037",
+    "status": "UNPAID",
+    "captured_cents": 0,
+    "refunded_cents": 0,
+    "net_paid_cents": 0,
+    "why": "filler"
+  },
+  {
+    "tenant": "T1",
+    "order": "O-1038",
+    "status": "PARTIALLY_PAID",
+    "captured_cents": 7250,
+    "refunded_cents": 0,
+    "net_paid_cents": 7250,
+    "why": "filler"
+  },
+  {
+    "tenant": "T3",
+    "order": "O-1039",
+    "status": "PARTIALLY_REFUNDED",
+    "captured_cents": 3200,
+    "refunded_cents": 800,
+    "net_paid_cents": 2400,
+    "why": "filler"
+  }
+]
