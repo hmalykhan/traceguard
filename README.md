@@ -55,13 +55,13 @@ attributed to any order. Regenerate the dataset with `python data/generate_datas
 python -m pytest -q          # 126 tests, about 5 seconds
 ```
 
-| File | What it covers |
-|---|---|
-| `tests/test_reconcile.py` | every status, each integrity rule, malformed values, tenant and cross-order collisions |
-| `tests/test_tools_and_injection.py` | failed call then retry, bounded retries, real timeout, fallback, bad tool responses, injection, hostile model |
-| `tests/test_properties.py` | **7 Hypothesis tests**: oracle agreement, shuffle, duplicates, unrelated tenants, arbitrary notes, money scaling, fuzzed garbage |
-| `tests/test_dataset.py` | all 74 orders in the 196-event dataset against hand-written expectations (`data/expected.json`) |
-| `tests/test_cli.py` | the exact output contract and the demo scenarios through the real command |
+| File                                  | What it covers                                                                                                                         |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `tests/test_reconcile.py`           | every status, each integrity rule, malformed values, tenant and cross-order collisions                                                 |
+| `tests/test_tools_and_injection.py` | failed call then retry, bounded retries, real timeout, fallback, bad tool responses, injection, hostile model                          |
+| `tests/test_properties.py`          | **7 Hypothesis tests**: oracle agreement, shuffle, duplicates, unrelated tenants, arbitrary notes, money scaling, fuzzed garbage |
+| `tests/test_dataset.py`             | all 74 orders in the 196-event dataset against hand-written expectations (`data/expected.json`)                                      |
+| `tests/test_cli.py`                 | the exact output contract and the demo scenarios through the real command                                                              |
 
 Metamorphic invariants checked: shuffling events, inserting identical duplicates, changing or adding
 support notes, adding events from unrelated tenants (including colliding order and event ids), and
@@ -86,14 +86,14 @@ question -> interpret (model: intent only) -> get_order / get_payment_events / g
          -> validate every record -> reconcile (pure rules) -> deterministic explanation -> JSON
 ```
 
-| Module | Role |
-|---|---|
-| `traceguard/models.py` | strict record validation (`parse_event`), source-trust table |
-| `traceguard/reconcile.py` | the deterministic engine and the 8-step status precedence |
-| `traceguard/store.py`, `tools.py` | in-memory store, the three tools, timeout + bounded retry, fault injection |
-| `traceguard/llm.py` | `ModelProvider` interface, offline `RuleBasedModel`, scriptable `MockModel` |
-| `traceguard/explain.py` | explanation built only from reconciled facts; never copies note text |
-| `traceguard/workflow.py` | orchestration, tool-response validation, fallbacks |
+| Module                                | Role                                                                              |
+| ------------------------------------- | --------------------------------------------------------------------------------- |
+| `traceguard/models.py`              | strict record validation (`parse_event`), source-trust table                    |
+| `traceguard/reconcile.py`           | the deterministic engine and the 8-step status precedence                         |
+| `traceguard/store.py`, `tools.py` | in-memory store, the three tools, timeout + bounded retry, fault injection        |
+| `traceguard/llm.py`                 | `ModelProvider` interface, offline `RuleBasedModel`, scriptable `MockModel` |
+| `traceguard/explain.py`             | explanation built only from reconciled facts; never copies note text              |
+| `traceguard/workflow.py`            | orchestration, tool-response validation, fallbacks                                |
 
 Order independence: the engine sorts events by a canonical key and groups by id, so input order can
 never matter. Identity ignores `ingested_at`, so late re-deliveries are not new events.
@@ -111,11 +111,11 @@ never matter. Identity ignores `ingested_at`, so late re-deliveries are not new 
 
 ### Confidence
 
-| Level | When |
-|---|---|
-| `LOW` | status is `UNKNOWN` |
+| Level      | When                                                                                                                                                                                 |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `LOW`    | status is `UNKNOWN`                                                                                                                                                                |
 | `MEDIUM` | status was determined, but either it rests on absence of evidence (`UNPAID`, `PARTIALLY_PAID`) or a `WARNING` anomaly exists (something was ignored, unsupported or malformed) |
-| `HIGH` | status determined from consistent, valid payments records with no warnings |
+| `HIGH`   | status determined from consistent, valid payments records with no warnings                                                                                                           |
 
 `INFO` anomalies (ignored duplicates, instruction-like notes, unverified failure signals) do not
 lower confidence.
